@@ -10,6 +10,7 @@ License: GPL
 Group: Networking/Mail
 Source: %{name}-%{version}.tar.bz2
 Buildrequires: byacc bison flex libopenssl-devel
+Buildroot: %{_tmppath}/%{name}-buildroot
 URL: http://mailfilter.sourceforge.net/
 
 %description
