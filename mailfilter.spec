@@ -1,6 +1,6 @@
 %define name mailfilter
-%define version 0.8
-%define release %mkrel 2
+%define version 0.8.1
+%define release %mkrel 1
 
 Name: %{name}
 Version: %{version}
@@ -43,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %name.lang
 %defattr(-, root, root)
-%doc AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS TODO
+%doc AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 %doc doc/FAQ 
 %{_bindir}/*
 %{_mandir}/man1/*
