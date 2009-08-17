@@ -1,6 +1,6 @@
 %define name mailfilter
-%define version 0.8.1
-%define release %mkrel 3
+%define version 0.8.2
+%define release %mkrel 1
 
 Name: %{name}
 Version: %{version}
@@ -8,7 +8,8 @@ Release: %{release}
 Summary: A program that filters your incoming e-mail to help remove spam
 License: GPL
 Group: Networking/Mail
-Source: %{name}-%{version}.tar.bz2
+Source: http://downloads.sourceforge.net/project/mailfilter/Mailfilter/%{version}/%{name}-%{version}.tar.gz
+Patch0: mailfilter-0.8.2-gcc44.patch
 Buildrequires: byacc bison flex libopenssl-devel
 Buildroot: %{_tmppath}/%{name}-buildroot
 URL: http://mailfilter.sourceforge.net/
@@ -25,7 +26,7 @@ accounts.
 rm -rf $RPM_BUILD_ROOT
 
 %setup
-
+%patch0 -p1 -b .gcc44
 %build
 
 %configure
