@@ -1,6 +1,6 @@
 %define name mailfilter
 %define version 0.8.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: %{name}
 Version: %{version}
@@ -10,6 +10,7 @@ License: GPL
 Group: Networking/Mail
 Source: http://downloads.sourceforge.net/project/mailfilter/Mailfilter/%{version}/%{name}-%{version}.tar.gz
 Patch0: mailfilter-0.8.2-gcc44.patch
+Patch1: mailfilter-0.8.2-openssl.patch
 Buildrequires: byacc bison flex libopenssl-devel
 Buildroot: %{_tmppath}/%{name}-buildroot
 URL: http://mailfilter.sourceforge.net/
@@ -23,19 +24,18 @@ ISDN, etc. Install Mailfilter if you'd like to remove spam from your POP3 mail
 accounts.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
-%setup
+%setup -q
 %patch0 -p1 -b .gcc44
-%build
+%patch1 -p0 -b .openssl
 
-%configure
+%build
+%configure2_5x
 
 %make
 
 %install
-
-%makeinstall
+rm -fr %buidlroot
+%makeinstall_std
 
 %find_lang %name
 
