@@ -30,8 +30,7 @@ accounts.
 
 %build
 %configure2_5x
-
-%make
+make
 
 %install
 rm -fr %buidlroot
