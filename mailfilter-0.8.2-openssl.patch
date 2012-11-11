@@ -1,0 +1,14 @@
+--- src/socket.cc.str	2010-04-19 11:09:10.000000000 +0200
++++ src/socket.cc	2010-04-19 11:21:05.000000000 +0200
+@@ -64,7 +64,11 @@
+ #ifdef USE_SSL
+   SSL*        ssl;
+   BIO*        sbio;
++#if OPENSSL_VERSION_NUMBER >= 0x1000000fL
++  const SSL_METHOD* ssl_meth;
++#else
+   SSL_METHOD* ssl_meth;
++#endif
+   SSL_CTX*    ssl_ctx;
+ #endif
+ 
