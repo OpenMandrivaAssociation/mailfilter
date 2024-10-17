@@ -13,7 +13,7 @@ Patch0: mailfilter-0.8.2-gcc44.patch
 Patch1: mailfilter-0.8.2-openssl.patch
 Buildrequires: byacc bison flex libopenssl-devel
 Buildroot: %{_tmppath}/%{name}-buildroot
-URL: http://mailfilter.sourceforge.net/
+URL: https://mailfilter.sourceforge.net/
 
 %description
 Mailfilter is very flexible utility for UNIX (-like) operating systems to get
