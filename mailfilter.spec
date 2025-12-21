@@ -11,6 +11,11 @@ Group: Networking/Mail
 Source: http://downloads.sourceforge.net/project/mailfilter/Mailfilter/%{version}/%{name}-%{version}.tar.gz
 Patch0: mailfilter-0.8.2-gcc44.patch
 Patch1: mailfilter-0.8.2-openssl.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 Buildrequires: byacc bison flex libopenssl-devel
 Buildroot: %{_tmppath}/%{name}-buildroot
 URL: https://mailfilter.sourceforge.net/
