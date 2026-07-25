@@ -1,6 +1,6 @@
 %define name mailfilter
 %define version 0.8.2
-%define release %mkrel 3
+%define release 4
 
 Name: %{name}
 Version: %{version}
